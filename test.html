@@ -1,0 +1,79 @@
+<HTML>
+<HEAD>
+
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jquery/1.3.2/jquery.min.js"></script>
+<script type="text/javascript" src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.7.2/jquery-ui.min.js"></script>
+
+
+<TITLE>Create Bounce Effect using jQuery - DEMO</TITLE>
+<STYLE>
+body, input{
+	font-family: Calibri, Arial;
+}
+div {
+	padding:5px;
+	width:150px;
+	height:100px;
+	text-align:center;
+}
+#bouncy1 {
+	background-color:#FFEE88;
+}
+#bouncy2 {
+	background-color:#EE88FF;
+}
+#bouncy3 {
+	background-color:#EE8888;
+}
+#bouncy4 {
+	background-color:#88EEFF;
+}
+</STYLE>
+</HEAD>
+<BODY>
+<H2>Create Bounce Effect using jQuery - Demo</H2>
+<p>Click here to view the Tutorial: <a href="http://viralpatel.net/blogs/2009/10/jquery-bounce-effect-bounce-html-js.html">Create Bounce Effect using jQuery</a></p>
+
+<table>
+<tr>
+	<td><div id="bouncy1">Click here to bounce. Direction: Up</div></td>
+	<td><div id="bouncy2">Click here to bounce. Direction: Left</div></td>
+</tr>
+<tr>
+	<td><div id="bouncy3">Click here to bounce. Direction: Right</div></td>
+	<td><div id="bouncy4">Click here to bounce. Direction: Down</div></td>
+</tr>
+</table>
+
+<br/>
+<input id="bounceAll" type="button" value="Click to Bounce All!"/>
+
+
+</BODY>
+<SCRIPT>
+$(function(){
+
+	//Add bounce effect on Click of the DIV
+	$('#bouncy1').click(function () {
+		  $(this).effect("bounce", { times:5 }, 300);
+	});
+
+	$('#bouncy2').click(function () {
+		  $(this).effect("bounce", { direction:'left', times:5 }, 300);
+	});
+
+	$('#bouncy3').click(function () {
+		  $(this).effect("bounce", { direction:'right', times:5 }, 300);
+	});
+
+	$('#bouncy4').click(function () {
+		  $(this).effect("bounce", { direction:'down', times:5 }, 300);
+	});
+
+	//Bounce all DIVs on click of button
+	$("#bounceAll").click(function(){
+		$("div").click();
+	});
+});
+</SCRIPT>
+</HTML>
